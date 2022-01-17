@@ -95,7 +95,7 @@ export default function MainHeader() {
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"
-          className="btn-light text-dark"
+          className="btn-light text-light bg-light"
         />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto font-weight-bold  nav-inline">

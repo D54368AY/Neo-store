@@ -1,0 +1,23 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+backend/node_module
+# dependencies
+ecommerce-final/node_modules
+ecommerce-final/.pnp
+ecommerce-final/.pnp.js
+
+# testing
+ecommerce-final/coverage
+
+# production
+ecommerce-final/build
+
+# misc
+ecommerce-final/.DS_Store
+ecommerce-final/.env.local
+ecommerce-final/.env.development.local
+ecommerce-final/.env.test.local
+ecommerce-final/.env.production.local
+
+ecommerce-final/npm-debug.log*
+ecommerce-final/yarn-debug.log*
+ecommerce-final/yarn-error.log*

@@ -1,0 +1,250 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.vl {
+  border-left: 3px solid black;
+ 
+}
+
+.footer {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
+
+/* .padding1{
+  width: 101%;
+} */
+.fb{
+  background-color: #3b5998;
+  padding: 15px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: larger;
+}
+.google{
+  background-color: #DB4437;
+  padding: 15px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: larger;
+}
+
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 0; 
+  font-size: 5px;
+  line-height: 1.428571429;
+  border-radius: 20px;
+}
+
+/* pagination css */
+
+.pagination {
+  font-weight: bolder;
+  /* margin: auto; */
+   align-items: center; 
+ /*  width: 45%;
+  padding: 10px; */
+  display: flex;
+  list-style: none;
+  outline: none;
+}
+.pagination > .active > a{
+  background-color: #47ccde ;
+  border-color: #47ccde ;
+  color: #fff;
+}
+.pagination > li > a{
+  border: 3px solid #47ccde ;
+  padding: 10px 20px;
+  outline: none;
+  cursor: pointer;
+}
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
+  background-color: #47ccde ;
+  border-color: #47ccde;
+  outline: none ;
+}
+.pagination > li > a, .pagination > li > span{
+  color: #47ccde
+}
+.pagination > li:first-child > a, .pagination > li:first-child > span, .pagination > li:last-child > a, .pagination > li:last-child > span{
+  border-radius: unset
+}
+/* pagination */
+@media only screen and (max-width: 400px) {
+  .pg {
+    max-width: 90%;
+  }
+   .pagination > li > a{
+    border: 1px solid #47ccde ;
+    padding: 10px 10px;
+    outline: none;
+    cursor: pointer;
+  } 
+}
+
+.bottom-border{
+  box-shadow: 1px 1px 9px #1e0369;
+  width: 100%;
+  font-size: 25px;
+  font-weight: bolder;
+  padding: 10px;
+}
+
+.ele{
+  font-weight: bold;
+}
+
+.ele:hover{
+  color: rgba(121, 4, 24, 0.753);
+}
+
+/* react share */
+
+.btn-circle1 {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  padding: 0; 
+  font-size: 5px;
+  line-height: 1.428571429;
+  border-radius: 40px;
+}
+
+/* checkout */
+
+
+.form-class{
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+ .input-class {
+	background: #e7e9ec;
+	padding: 10px;
+	width: 100%;
+	border: none;
+	margin-bottom: 20px;
+	font-size: 14px;
+	color: rgb(0, 0, 0);
+	outline: none;
+	font-weight: 300;
+}
+
+.rccs__card--unknown > div {
+	background: #0eee21;
+}
+
+.Center{
+  max-width:60%;
+    max-height:60%;
+    position:absolute;
+    top:0; left:0; right:0; bottom:0;
+    margin:auto;
+}
+
+/* name */
+
+.cardtext {
+  display: inline-block;
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+}
+
+@media only screen and (max-width: 900px) {
+
+.bottom-border{
+  box-shadow: 1px 1px 9px #1e0369;
+  width: 80%;
+  font-size: 15px;
+  font-weight: bolder;
+  padding: 2px;
+  display: inline-block;
+}
+
+}
+
+@media only screen and (max-width: 600px) {
+
+  .vl {
+    border-left: none;
+   
+  }
+}
+
+/* toggle nav */
+
+@media only screen and (max-width: 1000px) {
+
+  .searchbox {
+    width: 200px;
+}
+
+.searchinput {
+    height: 30px;
+    width: 50px;
+}
+.cartbutton{
+  width: 100px;
+  margin-top: 3px;
+}
+.dropdown{
+  margin: 10px;
+  float: right;
+}
+}
+
+/* cart grid */
+
+@media only screen and (max-width: 400px) {
+ 
+.griding{
+  display: inline-block;
+}
+
+ }
+

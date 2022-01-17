@@ -16,25 +16,25 @@ export function sendOtp(data){
     return axios.post(`${INVOICE_URL}user/sendotp`,data)
 }
 export function changePASS(data){
-    return axios.post(`${INVOICE_URL}user/changepass`,data)
+    return axios.post(`${INVOICE_URL}user/changepass`,data,{headers:{'Authorization':`Basic ${localStorage.getItem('_token')}`}})
 }
 
 //editprofile
 export function UpdateProfile(data){
-    return axios.post(`${INVOICE_URL}user/updateprof`,data)
+    return axios.post(`${INVOICE_URL}user/updateprof`,data,{headers:{'Authorization':`Basic ${localStorage.getItem('_token')}`}})
 }
 //password change in profile
 export function updatePassword(data){
-    return axios.post(`${INVOICE_URL}user/updatepassword`,data)
+    return axios.post(`${INVOICE_URL}user/updatepassword`,data,{headers:{'Authorization':`Basic ${localStorage.getItem('_token')}`}})
 }
 
 //add address
 export function addAddress(data){
-    return axios.post(`${INVOICE_URL}user/newaddress`,data)
+    return axios.post(`${INVOICE_URL}user/newaddress`,data,{headers:{'Authorization':`Basic ${localStorage.getItem('_token')}`}})
 }
 //del address
 export function deleteAddress(data){
-    return axios.post(`${INVOICE_URL}user/deladdress`,data)
+    return axios.post(`${INVOICE_URL}user/deladdress`,data,{headers:{'Authorization':`Basic ${localStorage.getItem('_token')}`}})
 }
 
 // add picture

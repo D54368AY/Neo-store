@@ -83,14 +83,17 @@ var upload = multer({
 
 //jwt authentication
 function autenticateToken(req, res, next) {
+       console.log(req.headers);
     const authHeader = req.headers["authorization"];
     const token = authHeader && authHeader.split(" ")[1];
     console.log(token);
     if (token == null) {
+        console.log("token null");
       res.json({ err: 2, msg: "Token Does Not Match" });
     } else {
       jwt.verify(token, jwtSecret, (err, data) => {
         if (err) {
+            console.log("token expired");
           res.json({ err: 2, msg: "Token Expired ....Please Login Again" });
         } else {
           console.log("Match");
@@ -215,7 +218,7 @@ router.post('/changepass',(req,res)=>{
 })
 
 
-router.post('/updateprof',(req,res)=>{
+router.post('/updateprof',autenticateToken,(req,res)=>{
 
     let firstname1=req.body.fname;
     let lastname1=req.body.lname;
@@ -283,7 +286,7 @@ router.post('/updatepassword',autenticateToken,(req,res)=>{
         })
 })
 
-router.post('/newaddress',(req,res)=>{
+router.post('/newaddress',autenticateToken,(req,res)=>{
     userModel.find({ email:req.body.email},(err,data)=>{
         if(data[0]){ 
             console.log(data[0]);
@@ -313,7 +316,7 @@ router.post('/newaddress',(req,res)=>{
 })
 
 
-router.post('/deladdress',(req,res)=>{
+router.post('/deladdress',autenticateToken,(req,res)=>{
 
     userModel.updateOne({ email:req.body.email},{$pull:{address:{_id:req.body.id}}},(err)=>{
         if(err){
@@ -333,7 +336,7 @@ router.post('/deladdress',(req,res)=>{
 })
 
 
-router.post('/addpicture',upload.single('file'),(req,res)=>{
+router.post('/addpicture',autenticateToken,upload.single('file'),(req,res)=>{
     console.log(req.file.email);
     console.log(req.file.filename);
     userModel.updateOne({ email:req.body.email},{$set:{profile_pic:req.file.filename}},(err)=>{

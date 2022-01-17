@@ -24,7 +24,7 @@ export default function Dashboard() {
       if (localStorage.getItem("cartItem")) {
         let arr = JSON.parse(localStorage.getItem("cartItem"));
         dispatch({ type: "CART_COUNT", payload: arr.length });
-        arr.forEach((element) => {
+        arr.map((element) => {
           let Data = {
             productid: element,
             userid: detail._id,

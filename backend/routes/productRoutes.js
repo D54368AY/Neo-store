@@ -27,7 +27,7 @@ router.get("/getAllProducts", (req, res) => {
     .populate(["category_id", "color_id"])
     .then((product) => {
       /* console.log(product+"/n"+catdata+"/n"+colordata);  */
-      console.log(product.length);
+     /*  console.log(product.length); */
       res.json({
         err: 0,
         allproducts: product,
@@ -43,7 +43,7 @@ router.get("/getSortUp", (req, res) => {
     .sort({ product_cost: 1 })
     .populate(["category_id", "color_id"])
     .then((product) => {
-      console.log(product);
+      /* console.log(product); */
       res.json({ err: 0, sorted: product });
     });
 });
@@ -54,7 +54,7 @@ router.get("/getSortDown", (req, res) => {
     .sort({ product_cost: -1 })
     .populate(["category_id", "color_id"])
     .then((product) => {
-      console.log(product);
+     /*  console.log(product); */
       res.json({ err: 0, sorted: product });
     });
 });
@@ -69,7 +69,7 @@ router.post("/rating", (req, res) => {
       } else {
         productModal.find({ _id: req.body.id }, (err, data) => {
           if (data[0]) {
-            console.log(data);
+            /* console.log(data); */
             res.json({ err: 0, msg: "Successfully Rated" });
             console.log("rated");
           }

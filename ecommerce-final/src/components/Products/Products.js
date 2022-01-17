@@ -90,7 +90,6 @@ export default function Products() {
         setAllProducts(res.data.allproducts);
         setAllColors(res.data.colors);
         setAllCategory(res.data.categories);
-
         const col = res.data.colors.map((value) => value.color_name);
         console.log(col);
         setColor(col);
@@ -279,8 +278,8 @@ export default function Products() {
 
         <Col lg={4}>
           <Row>
-            {/* <Col></Col> */}
-            <Col /* lg={6} */ className="text-end">
+
+            <Col  className="text-end">
               <Button
                 variant="primary"
                 className="rounded-circle"
@@ -310,10 +309,10 @@ export default function Products() {
             </Col>
           </Row>
         </Col>
-        {/* <hr className="mt-2 bg-light" /> */}
+       
       </Row>
       <Row>
-        <Col lg={3} className="text-center  mt-4">
+        <Col lg={3} className="text-center mt-4">
           <p
             variant="light"
             size="lg"
@@ -354,9 +353,8 @@ export default function Products() {
             variant="light"
             onClick={handlecolor}
             size="lg"
-            className="bottom-border "
+            className="bottom-border"
           >
-            {" "}
             {showcolor ? <CaretDownFill /> : <CaretRightFill />}Color
           </p>
           <br />

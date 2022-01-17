@@ -277,6 +277,7 @@ async function main(data,email){
 
 
 router.post("/addtocart", (req, res) => {
+       console.log(req.body);
   cartModal.find({ user_id: req.body.userid }, (err, data) => {
     if (data[0]) {
        var userdata=data[0];
@@ -295,9 +296,9 @@ router.post("/addtocart", (req, res) => {
       }
       else{
         let a = { product_id: req.body.productid, product_count: 1 };
-        console.log(userdata.products)
+       /*  console.log(userdata.products) */
         userdata.products.push(a);
-        console.log(userdata.products)
+        /* console.log(userdata.products) */
         
         cartModal.updateOne({ user_id: req.body.userid },{$set:{products:userdata.products}},(err)=>{
           if(err){
@@ -331,7 +332,7 @@ router.post('/getcart',(req,res)=>{
   cartModal.find({user_id:req.body.userid})
     .populate("products.product_id")
     .then((product) => {
-       console.log(product)
+       /* console.log(product) */
       res.json({err: 0 ,'cartdata' :product })
     
     }) 

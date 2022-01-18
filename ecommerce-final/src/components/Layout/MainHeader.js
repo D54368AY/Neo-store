@@ -63,6 +63,8 @@ export default function MainHeader() {
   const routeLogout = () => {
     localStorage.removeItem("_token");
     dispatch({ type: "LOGOUT" });
+    dispatch({ type: "CART_COUNT", payload: 0 });
+    setCartcount(0)
     history.push("/login");
   };
   const redirectOrder = () => {
@@ -81,6 +83,7 @@ export default function MainHeader() {
   };
   const redirectCart = () => {
     history.push("/cart");
+
   };
 
   return (

@@ -290,7 +290,7 @@ export default function Producthetail(props) {
       >
         <div className="bg-secondary">
           <Modal.Header closeButton>
-            <Modal.Title>Change Profile Pciture</Modal.Title>
+            <Modal.Title>Please Give Rating</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Card>

@@ -7,7 +7,7 @@ const cartModal = require("../db/cartSchema");
 const orderModal = require("../db/orderSchema");
 const catModal = require("../db/categorySchema");
 const colorModal = require("../db/colorSchema");
-const userModel=require('../db/userSchema')
+const userModel=require('../db/userSchema');
 const nodemailer = require("nodemailer");
 const multer = require("multer");
 const path = require("path");
@@ -302,6 +302,7 @@ router.post("/addtocart", (req, res) => {
         
         cartModal.updateOne({ user_id: req.body.userid },{$set:{products:userdata.products}},(err)=>{
           if(err){
+               console.log(err);
             res.json({ err: 1, msg: "Product Not Added To Cart" });
           }
           else{
@@ -388,8 +389,6 @@ router.post('/dec',(req,res)=>{
 })
 
 })
-
-
 
 
 router.post('/placeorder',(req,res)=>{

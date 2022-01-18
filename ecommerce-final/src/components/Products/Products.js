@@ -321,16 +321,14 @@ export default function Products() {
           >
             All Product
           </p>
-          <br />
           <p
             variant="light"
             onClick={handlecat}
             size="lg"
-            className="bottom-border "
+            className="bottom-border"
           >
             {showcat ? <CaretDownFill /> : <CaretRightFill />}Category
           </p>
-          <br />
           {showcat ? (
             <span >
               {Category.map((ele) => (
@@ -348,7 +346,6 @@ export default function Products() {
           ) : (
             ""
           )}
-          <br />
           <p
             variant="light"
             onClick={handlecolor}

@@ -34,7 +34,7 @@ export default function Dashboard() {
             if (res.data.err === 1) {
               alert(res.data.msg);
             } else {
-
+               console.log(res);
               let data = { userid: detail._id };
               GETALLCART(data).then((res) => {
                 if (res.data.err === 0) {
@@ -47,19 +47,38 @@ export default function Dashboard() {
                   }
                 }
               });
-
-
             }
           });
+          return console.log('ok');
         });
         console.log("got the cart product");
         localStorage.removeItem("cartItem");
 
       }
 
+      let data = { userid: detail._id };
+      GETALLCART(data).then((res) => {
+        if (res.data.err === 0) {
+          dispatch({ type: "ADD_TO_CART", payload: res.data.cartdata });
+          console.log(res.data.cartdata[0].products);
+          if (res.data.cartdata[0].products != undefined) {
+            const count = res.data.cartdata[0].products;
+            console.log(count.length);
+            dispatch({ type: "CART_COUNT", payload: count.length }); 
+          }
+        }
+      });
+
+
     }
+    
+
+
+
     GETAllProducts().then((res) => {
       if (res.data.err === 0) {
+
+        
         dispatch({ type: "ALL_PRODUCTS", payload: res.data.allproducts });
         let Sorteddata = res.data.allproducts.sort((a, b) => {
           return b.product_rating - a.product_rating;

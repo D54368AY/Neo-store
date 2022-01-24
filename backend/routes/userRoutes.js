@@ -83,7 +83,6 @@ var upload = multer({
 
 //jwt authentication
 function autenticateToken(req, res, next) {
-       console.log(req.headers);
     const authHeader = req.headers["authorization"];
     const token = authHeader && authHeader.split(" ")[1];
     console.log(token);
@@ -159,7 +158,7 @@ router.post('/loginsocial',(req,res)=>{
     ins.save((err)=>{
         if(err) 
         {
-            res.json({err:1,msg:'Cannot login with your social details'})
+            res.json({err:1,msg:'Alread User Exist With Credentials'})
         }
         else{
             let a={firstname:Firstname,lastname:Lastname,email:Email,is_social:true,address:[],phone_no:'00',profile_pic:''}
@@ -336,7 +335,7 @@ router.post('/deladdress',autenticateToken,(req,res)=>{
 })
 
 
-router.post('/addpicture',autenticateToken,upload.single('file'),(req,res)=>{
+router.post('/addpicture',upload.single('file'),(req,res)=>{
     console.log(req.file.email);
     console.log(req.file.filename);
     userModel.updateOne({ email:req.body.email},{$set:{profile_pic:req.file.filename}},(err)=>{

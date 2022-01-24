@@ -8,8 +8,6 @@ import {
   Button,
 } from "react-bootstrap";
 import Notifications,{ notify} from 'react-notify-toast';
-/* import 'react-notifications/lib/notifications.css';
-import{NotificationContainer,NotificationManager} from 'react-notifications' */
 import { Google, Facebook } from "react-bootstrap-icons";
 import { NavLink, useHistory } from "react-router-dom";
 import { LoginSocial, UserLogin } from "../../config/myservice";
@@ -75,7 +73,6 @@ export default function Login(props) {
           history.push("/");
         } else {
           console.log(res.data.msg);
-         /*  alert(res.data.msg); */
           notify.show(res.data.msg,'error',3000);  
         }
       })
@@ -104,7 +101,6 @@ export default function Login(props) {
           history.push("/");
         } else {
           console.log(res.data.msg);
-          /* alert(res.data.msg); */
           notify.show(res.data.msg,'error',3000);  
         }
       })
@@ -156,7 +152,7 @@ export default function Login(props) {
         </Col>
 
         <Col lg={6} sm={6} md={6} className="vl">
-          <div className="bg-light border-bottom mb-3 p-3 ">
+          <div className="bg-light border-bottom mt-3 mb-3 p-3 ">
             <h3 className="">Login to neoSTORE </h3>
             <FormGroup>
               <FormControl

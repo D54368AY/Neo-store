@@ -24,13 +24,11 @@ export default function Changepass() {
       setSocial(detail.is_social);
       console.log(detail);
       setUserDetails(detail);
-      /* console.log(is_social) */
     }
   }, [localStorage.getItem("_token")]);
 
   const changePassword = () => {
     if (newpassref.current.value !== cnfrmpassref.current.value) {
-      /* alert("please enter confirm password same as password"); */
       notify.show("please enter confirm password same as password",'warning',3000);
     } else {
       let Data = {

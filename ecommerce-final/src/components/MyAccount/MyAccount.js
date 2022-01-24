@@ -76,10 +76,8 @@ export default function MyAccount() {
       if (res.data.err !== 1) {
         localStorage.setItem("_token", res.data.token);
         dispatch({ type: "EDIT_PROFILE", payload: res.data.token });
-        NotificationManager.success("Profile Pic Changed", 'Success',3000);
+        NotificationManager.success("Profile Pic Changed", 'Success',2000);
         handleClose();
-        /* setPicture(userDetails.profile_pic);
-        console.log(userDetails.profile_pic); */
       }
     });
   };

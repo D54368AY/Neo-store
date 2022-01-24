@@ -71,7 +71,7 @@ export default function Orders() {
                 )}
               </Row>
             </Col>
-            <Col lg={2} sm={2} md={2}> Rs.{element.order_total} </Col>
+            <Col lg={2} sm={2} md={2} className="fw-bold" > Rs.{element.order_total} </Col>
             <Col lg={2} sm={2} md={2}>{element.order_date} </Col>
             <Col lg={2}>
               <Link to={`/pdf/${element._id}`}>

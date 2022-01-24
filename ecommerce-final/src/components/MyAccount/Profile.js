@@ -48,7 +48,6 @@ export default function Profile() {
       } else if (res.data.err === 2) {
         console.log(res.data.msg);
         notify.show(res.data.msg + "....going back to login stage",'warning',3000);
-        /* alert(res.data.msg + "....going back to login stage"); */
         setTimeout(() => {
           history.push("/login");
         }, 3000);

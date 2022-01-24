@@ -80,7 +80,7 @@ export default function Cart() {
         alert(res.data.msg);
         NotificationManager.warning(res.data.msg, 'Warning',2000);
       } else {
-        NotificationManager.success("Increased Count", 'Added',2000);
+        NotificationManager.success("Increased Count", 'Added',1000);
         let data = { userid: Userdetail._id };
         GETALLCART(data).then((res) => {
           if (res.data.err === 0) {
@@ -103,7 +103,7 @@ export default function Cart() {
       if (res.data.err === 1) {
         alert(res.data.msg);
       } else {
-        NotificationManager.success("Decreased Count", 'Removed',2000);
+        NotificationManager.success("Decreased Count", 'Removed',1000);
         let data = { userid: Userdetail._id };
         GETALLCART(data).then((res) => {
           if (res.data.err === 0) {

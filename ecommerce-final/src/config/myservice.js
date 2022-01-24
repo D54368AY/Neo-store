@@ -40,7 +40,7 @@ export function deleteAddress(data){
 // add picture
 
 export function AddProfilePicture(data){
-    return axios.post(`${INVOICE_URL}user/addpicture`,data,{ headers: {'content-type': 'multipart/form-data'}})
+    return axios.post(`${INVOICE_URL}user/addpicture`,data)
 }
 
 

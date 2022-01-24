@@ -164,7 +164,6 @@ export default function Register(props) {
           props.history.push("/");
         } else {
           console.log(res.data.msg);
-          /* alert(res.data.msg); */
           notify.show(res.data.msg,'warning',3000);  
         }
       })

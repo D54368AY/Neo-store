@@ -32,7 +32,6 @@ export default function Address() {
     setShow(true);
     console.log(add);
     seteditAdd(add);
-    /*  editaddressref.current.value=add;  */
   };
 
   const dispatch = useDispatch();
@@ -57,8 +56,7 @@ export default function Address() {
   };
   const addnewAddress = () => {
     if (addressref.current.value.length <= 20) {
-     /*  alert("Please Enter a Address of Atlease 20 Charaters "); */
-      notify.show('Please Enter a Address of Atlease 20 Charaters !','success',3000);
+      notify.show('Please Enter a Address of Atlease 20 Charaters !','success',2000);
     } else {
       let Data = {
         email: userDetails.email,
@@ -73,7 +71,6 @@ export default function Address() {
           localStorage.setItem("_token", res.data.token);
           dispatch({ type: "ADD_ADDRESS", payload: res.data.token });
           console.log(res.data.msg);
-         /*  alert(res.data.msg); */
           NotificationManager.success(res.data.msg, 'Added',2000);
           setFlag(!flag);
         }
@@ -95,7 +92,6 @@ export default function Address() {
         localStorage.setItem("_token", res.data.token);
         dispatch({ type: "ADD_ADDRESS", payload: res.data.token });
         console.log(res.data.msg);
-        /* alert(res.data.msg); */
         NotificationManager.success(res.data.msg, 'Deleted',2000);
       }
     });

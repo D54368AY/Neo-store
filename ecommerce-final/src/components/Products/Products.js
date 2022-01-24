@@ -19,7 +19,7 @@ import {
   CaretDownFill,
   CaretRightFill,
   ArrowBarRight,
-  Cart3,
+  Filter
 } from "react-bootstrap-icons";
 import {
   BrowserRouter as Router,
@@ -146,6 +146,9 @@ export default function Products() {
         let data = { userid: detail._id };
         GETALLCART(data).then((res) => {
           if (res.data.err === 0) {
+            const count = res.data.cartdata[0].products;
+            console.log(count.length);
+            dispatch({ type: "CART_COUNT", payload: count.length });
             dispatch({ type: "ADD_TO_CART", payload: res.data.cartdata });
             console.log(res.data.cartdata);
             console.log("got the cart product");
@@ -242,9 +245,7 @@ export default function Products() {
 
   return (
     <Container fluid>
-     
      <Notifications  />
-
       <Row className="mt-3 pl-4 pr-4">
         <Col lg={8}>
           <tr>
@@ -258,7 +259,7 @@ export default function Products() {
                       {" "}
                       <Badge pill bg="primary">
                         {filter.category}
-                        <ArrowBarRight />
+                        <Filter />
                       </Badge>{" "}
                     </>
                   )}
@@ -266,7 +267,7 @@ export default function Products() {
                     <>
                       <Badge pill bg="primary">
                         {filter.color}
-                        <ArrowBarRight />
+                        <Filter />
                       </Badge>{" "}
                     </>
                   )}

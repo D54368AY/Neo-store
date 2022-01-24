@@ -51,6 +51,15 @@ export default function Producthetail(props) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+
+  useEffect(() => {
+    const filterproduct =
+      products && products.filter((pro) => pro._id === product_id);
+    setselectedProduct(filterproduct[0]);
+    setselectedImage(filterproduct[0].product_image[0]);
+  }, [Rating]);
+
+
   const ratingChanged = (newRating) => {
     console.log(newRating);
     setRating(newRating);
@@ -64,21 +73,12 @@ export default function Producthetail(props) {
     console.log(data);
     RATEPRODUCT(data).then((res) => {
       if (res.data.err === 0) {
-        alert(res.data.msg);
         NotificationManager.success(res.data.msg, 'Success');
         setShow(false);
         setflag(!flag);
       }
     });
   };
-
-  useEffect(() => {
-    const filterproduct =
-      products && products.filter((pro) => pro._id === product_id);
-    setselectedProduct(filterproduct[0]);
-    setselectedImage(filterproduct[0].product_image[0]);
-    console.log(filterproduct[0].product_image[0]);
-  }, [flag]);
 
   const mainImage = (key) => {
     const image = selectedProduct.product_image[key];
@@ -281,7 +281,6 @@ export default function Producthetail(props) {
       )}
 
       <Modal
-        size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered
         show={show}

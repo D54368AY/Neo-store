@@ -68,8 +68,6 @@ export default function Forgotpass(props) {
     console.log(data);
     sendOtp(data).then((res) => {
       if (res.data.err == 1) {
-        /* console.log(res.data); */
-        /* alert("this email does not exist"); */
         notify.show("You Don't Have Any Account With This Email....Please Register First",'warning',3000); 
       } else {
         setFlag(true);
@@ -88,17 +86,14 @@ export default function Forgotpass(props) {
       };
       changePASS(formData).then((res) => {
         if (res.data.err == 0) {
-          /* alert("password changed...login again"); */
-          /* notify.show("Hey There !!!! Password Changed...login again",'warning',3000);  */ 
-          NotificationManager.success('Password Changed', 'Success',2000);
+          NotificationManager.success('Password Changed', 'Success',1500);
           setTimeout(() => {
             props.history.push("/login");
-          }, 2000);
+          }, 1800);
             
         }
       });
     } else {
-     /*  alert("otp does not match .... please try again"); */
       notify.show("Sorry!!! Your OTP does not match .... Please try again using correct OTP ",'warning',3000);  
       props.history.push("/forgot");
     }
